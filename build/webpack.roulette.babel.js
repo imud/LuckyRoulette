@@ -6,13 +6,14 @@ import CleanWebpackPlugin from 'clean-webpack-plugin'
 
 export default {
     entry:{
-        vendor: ['vue'],
-        sample:['./src/sample.js']
+        roulette:['./src/roulette/index.js']
     },
     output: {
-        path: path.resolve(__dirname, '../dist/'),
-        publicPath: 'dist/',
-        filename: '[name].js'//[chunkhash:8]
+        path: path.resolve(__dirname, '../dist/roulette/'),
+        publicPath: 'dist/roulette/',
+        filename: '[name].js',//[chunkhash:8]
+		library:'Roulette',
+		libraryTarget:'umd'
     },
     module: {
         rules: [{
@@ -36,14 +37,9 @@ export default {
         ]
     },
     plugins: [
-        new ExtractTextPlugin('[name].css'), 
-        new webpack.optimize.CommonsChunkPlugin({
-            name: 'vendor',
-            filename: 'vendor.js', 
-            minChunks: Infinity 
-        }),
+        // new ExtractTextPlugin('[name].css'), 
          new CleanWebpackPlugin(
-            ['./dist/*.js', './dist/*.css'], {
+            ['./dist/roulette/*.js', './dist/roulette/*.css'], {
                 root: path.resolve(__dirname, '../'), 
                 verbose: false, 
                 dry: false 

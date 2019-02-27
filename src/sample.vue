@@ -1,7 +1,7 @@
 <template>
 	<div class="wrapper">
-		<Roulette :r="roulette.radius" :coverUrl="roulette.coverUrl" :datas="roulette.datas" :test="roulette.test"
-		 :pointerUrl="roulette.pointerUrl" ref="luckyRoulette" :during="duringHandle" @click="clickFun"></Roulette>
+		<Roulette :r="roulette.radius" :coverurl="roulette.coverurl" :datas="roulette.datas" :test="roulette.test"
+		 :pointerurl="roulette.pointerurl" ref="luckyRoulette" :during="duringHandle" @click="clickFun"></Roulette>
 
 		<div class="sample">
 			<p>状态:"{{sample.state}}"</p>
@@ -33,10 +33,10 @@
 				<label for="radius">设置半径<input type="number" id="radius" v-model.number="roulette.radius"></label>
 			</p>
 			<p>
-				<button type="button" @click="toggleCoverUrl">{{roulette.coverUrl?'隐藏':'显示'}}封面</button>
+				<button type="button" @click="toggleCoverUrl">{{roulette.coverurl?'隐藏':'显示'}}封面</button>
 			</p>
 			<p>
-				<button type="button" @click="togglePointerUrl">{{roulette.pointerUrl?'隐藏':'显示'}}指针</button>
+				<button type="button" @click="togglePointerUrl">{{roulette.pointerurl?'隐藏':'显示'}}指针</button>
 			</p>
 			<p>
 				<button type="button" @click="toggleTest">{{roulette.test?'隐藏':'显示'}}辅助线</button>
@@ -45,7 +45,7 @@
 	</div>
 </template>
 <script>
-	import Vue from 'vue'
+	// import Roulette from '../dist/roulette/roulette.js'
 	import Roulette from './roulette'
 
 	export default {
@@ -58,8 +58,8 @@
 					state: 'static'
 				},
 				roulette: {
-					coverUrl: 'assets/r.png',
-					pointerUrl: 'assets/p.png',
+					coverurl: 'assets/r.png',
+					pointerurl: 'assets/p.png',
 					radius: 100,
 					test: true,
 					datas: [{
@@ -104,10 +104,10 @@
 				this.sample.state = state;
 			},
 			toggleCoverUrl() {
-				this.roulette.coverUrl = !this.roulette.coverUrl ? 'assets/r.png' : '';
+				this.roulette.coverurl = !this.roulette.coverurl ? 'assets/r.png' : '';
 			},
 			togglePointerUrl() {
-				this.roulette.pointerUrl = !this.roulette.pointerUrl ? 'assets/p.png' : '';
+				this.roulette.pointerurl = !this.roulette.pointerurl ? 'assets/p.png' : '';
 			},
 			toggleTest() {
 				this.roulette.test = !this.roulette.test;

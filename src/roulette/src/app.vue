@@ -3,7 +3,7 @@
 		<div class="roulette_roundel" :class="currState" :id="elId" :style="_roundelStyle()" @transitionend="_transEnd"
 		 @webkitTransitionEnd="_transEnd">
 			<span class="roulette_roundel--cover">
-				<img v-if="coverUrl" width="100%" height="100%" :src="coverUrl" alt="">
+				<img v-if="coverurl" width="100%" height="100%" :src="coverurl" alt="">
 			</span>
 			<span v-if="test" class="roulette_roundel--subline --mid" :style="_sublineStyle(item)" v-for="(item,$index) in datum.mid"
 			 :key="`m${$index}`"></span>
@@ -12,7 +12,7 @@
 		</div>
 		<div v-if="test" class="roulette_pointer--test"></div>
 		<div class="roulette_pointer--image" @click="handleClick">
-			<img :src="pointerUrl" alt="">
+			<img v-if="pointerurl" :src="pointerurl" alt="">
 		</div>
 	</div>
 </template>
@@ -43,7 +43,7 @@
 		props: {
 			//分块数据，块顺序无限制
 			//name为块名，需唯一
-			//degs为块的起始和结束角度，范围不可重合，可不连续
+			//degs为块的起始和结束角度，正数，范围不可重合，可不连续
 			datas: {
 				type: Array,
 				default () {
@@ -89,11 +89,11 @@
 				default: new Function()
 			},
 			//封面地址
-			coverUrl: {
+			coverurl: {
 				type: String
 			},
 			//指针图片地址
-			pointerUrl: {
+			pointerurl: {
 				type: String
 			},
 			//是否为测试，测试将显示辅助线
@@ -122,6 +122,7 @@
 					midArr.push(((item[0] + item[1]) / 2) % 360)
 					lineArr.push(item[0], item[1])
 				})
+
 				return {
 					mid: midArr,
 					line: lineArr
@@ -157,7 +158,7 @@
 					})
 
 					if (!currItem) {
-						console.log('未找到目标奖品')
+						console.log('No target found')
 						return;
 					}
 

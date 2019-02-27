@@ -54,14 +54,14 @@ Lucky Roulette
 ### Methods
 - play
   
-  运行
+  运行，状态从(static->play或stop->static->play)
 
 - brake(name)
   
-  减速至name点
+  减速至name点，状态从(play->trans->brake->stop)
 
 - reset
 
-  重置
+  重置，让转盘回到初始状态。一般的连续抽奖只需play->brake->play->brake无需reset
   
 <img src="roulette.png" width="320" />

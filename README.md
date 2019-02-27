@@ -34,7 +34,7 @@ Lucky Roulette
   
 - test
 
-  是否显示辅助线（type: Boolean,default: false）
+  是否显示辅助线（type: Boolean,default: false）：帮助调整区块的度数范围和UI相符。
   
 - vague
 

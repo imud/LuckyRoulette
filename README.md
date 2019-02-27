@@ -44,12 +44,17 @@ Lucky Roulette
 
   不可用性（type: Boolean,default: false）
   
-### Events
 - during
 
   转动时的回调（type: Function,default: new Function()）
   
   返回状态：static（静止状态：默认，指针向上，旋转归零）->play（运行）->trans（过渡）->brake（减速）->stop（停止）
+  
+### Events
+
+- click
+
+  点击指针
   
 ### Methods
 - play

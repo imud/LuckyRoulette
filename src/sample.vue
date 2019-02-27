@@ -30,17 +30,16 @@
 				</table>
 			</div>
 			<p>
-				<label for="radius">设置半径<input type="number" id="radius" v-model.number="roulette.radius"></label>
-			</p>
-			<p>
 				<button type="button" @click="toggleCoverUrl">{{roulette.coverurl?'隐藏':'显示'}}封面</button>
-			</p>
-			<p>
+
 				<button type="button" @click="togglePointerUrl">{{roulette.pointerurl?'隐藏':'显示'}}指针</button>
-			</p>
-			<p>
+
 				<button type="button" @click="toggleTest">{{roulette.test?'隐藏':'显示'}}辅助线</button>
 			</p>
+			<p>
+				<label for="radius">设置半径<input type="number" id="radius" v-model.number="roulette.radius"></label>
+			</p>
+
 		</div>
 	</div>
 </template>
@@ -126,13 +125,12 @@
 		text-align: center;
 	}
 
-	input,
-	button {
+	input {
 		font-size: inherit;
-		width: 80px;
+		width: 40px;
 	}
 
-	input[type="number"] {
-		width: 60px;
+	button {
+		font-size: inherit;
 	}
 </style>

@@ -1,6 +1,6 @@
 # LuckyRoulette
 Lucky Roulette 
-幸运转盘 [查看演示](https://mudb.cn/test/roulette/sample.html "查看演示")
+幸运转盘 
 ## 
 ```
 <Roulette></Roulette>
